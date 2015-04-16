@@ -1,0 +1,244 @@
+﻿<div id="example" class="container">
+    <section class="well">
+        <h2 class="ra-well-title">What is this page?</h2>
+
+        <p>This page shows how to use Kendo UI alongside Twitter Bootstrap.</p>
+
+        <p>The grid layout and responsive CSS is provided by Bootstrap, and widgets are provided by Kendo UI.</p>
+
+        <p>Resize the page or customize it using the pickers above to see its responsive features.</p>
+    </section>
+
+    @(Html.Kendo().Menu()
+        .Name("menu")
+        .Items(children =>
+            {
+                children.Add().Text("Profile").Url("#profile");
+                children.Add().Text("Schedule").Url("#schedule");
+                children.Add().Text("Orders").Url("#orders");
+                children.Add().Text("Gallery").Url("#gallery");
+                children.Add().Text("FAQ").Url("#faq");
+                children.Add().Text("Kendo UI demos").Url("http://demos.telerik.com/kendo-ui");
+            }
+        )
+    )
+    <div class="row clearfix">
+        <div class="col-lg-4">
+            <section id="profile" class="well">
+                <h2 class="ra-well-title">Profile</h2>
+
+                <div class="row">
+                    <div class="col-lg-5 col-sm-2">
+                        <img src="assets/avatar.jpg" class="ra-avatar img-responsive" />
+                    </div>
+
+                    <div class="col-lg-7 col-sm-2">
+                        <span class="ra-first-name">Jonathan</span>
+                        <span class="ra-last-name">Dodsworth</span>
+                        <div class="ra-position">Inside Sales Coordinator</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-lg-8">
+            @(Html.Kendo().TabStrip()
+                .Name("tabstrip")
+                .Items(tabstrip =>
+                    {
+                        tabstrip.Add().Text("Revenue").SpriteCssClasses("km-icon revenue")
+                                .Selected(true)
+                                .Content(@<text></text>);
+
+                        tabstrip.Add().Text("Sales / day")
+                                .Content(@<text></text>);
+                        tabstrip.Add().Text("Sales / regio")
+                                .Content(@<text></text>);
+                        tabstrip.Add().Text("Market share")
+                                .Content(@<text></text>);
+                    }
+                )
+            )
+
+            <div id="tabstrip" class="ra-section">
+                <ul>
+                    <li class="k-state-active"><span class="km-icon revenue"></span><span class="hidden-xs">Revenue</span></li>
+                    <li><span class="km-icon spd"></span><span class="hidden-xs">Sales / day</span></li>
+                    <li><span class="km-icon spr"></span><span class="hidden-xs">Sales / region</span></li>
+                    <li><span class="km-icon share"></span><span class="hidden-xs">Market share</span></li>
+                </ul>
+                <div>
+                    <div id="revenue"></div>
+                </div>
+                <div>
+                    <div id="sales-per-day"></div>
+                </div>
+                <div>
+                    <div id="sales-per-region"></div>
+                </div>
+                <div>
+                    <div id="market-alice-mutton" class="market-donut"></div>
+                    <div id="market-gravad-lax" class="market-donut"></div>
+                    <div id="market-inlagd-sill" class="market-donut"></div>
+                    <div id="market-spegesild" class="market-donut"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="well">
+        <h2 class="ra-well-title">Profile Setup</h2>
+
+        <div class="form-horizontal form-widgets col-sm-6">
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="name">Name</label>
+                <div class="col-sm-8 col-md-6">
+                    <input id="name" value="Johnatan Dodsworth" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="birthday">Birthday</label>
+                <div class="col-sm-8 col-md-6">
+                    <input type="date" value="10/09/1979" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="gender">Gender</label>
+                <div class="col-sm-8 col-md-6">
+                    <select id="gender">
+                        <option selected>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="language">Language</label>
+                <div class="col-sm-8 col-md-6">
+                    <select id="language">
+                        <option selected>English</option>
+                        <option>German</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-horizontal form-widgets col-sm-6">
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="occupation">Occupation</label>
+                <div class="col-sm-8 col-md-6">
+                    <input id="occupation" placeholder="e.g. Developer" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="skills">Skills</label>
+                <div class="col-sm-8 col-md-6">
+                    <select id="skills" multiple>
+                        <option>C</option>
+                        <option>C++</option>
+                        <option selected>C#</option>
+                        <option>JavaScript</option>
+                        <option selected>jQuery</option>
+                        <option>Git</option>
+                        <option>Node.js</option>
+                        <option>Ruby</option>
+                        <option>Ruby on Rails</option>
+                        <option>Kendo UI</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="experience">Experience</label>
+                <div class="col-sm-8 col-md-6">
+                    <input id="experience" type="number" value="4" />
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="form-horizontal form-widgets col-sm-12">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="bio">Short bio</label>
+                <div class="col-sm-10">
+                    <textarea id="bio"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons-wrap">
+            <button class="k-button k-state-default">Cancel</button>
+            <button class="k-button k-state-default">Update</button>
+        </div>
+    </section>
+
+    <div id="orders" class="ra-section"></div>
+
+    <div id="schedule" class="ra-section"></div>
+
+    <section id="gallery" class="well">
+        <h2 class="ra-well-title">Latest photo uploads</h2>
+
+        <script id="listview-template" type="x-kendo-template">
+                    <li class="col-xs-6 col-md-4 col-lg-2">
+                        <figure>
+                            <img src="assets/photos/#= id #.jpg" class="img-responsive" />
+                            <figcaption class="hidden-xs">
+                                <h4>#: title #</h4>
+                                <p class="hidden-sm">
+                                    #: description #
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </li>
+        </script>
+
+        <ul id="listview" class="ra-well-overlay row"></ul>
+    </section>
+
+    <section id="faq" class="well">
+        <h2 class="ra-well-title">
+            <abbr title="Frequently Asked Questions">FAQ</abbr></h2>
+
+        <ul id="panelbar" class="ra-well-overlay">
+            <li class="k-state-active">What is Kendo UI?
+                        <div>
+                            <p>Kendo UI is a HTML5, jQuery-based framework for building modern HTML apps. Kendo UI combines the best of emerging HTML5, CSS3, and JavaScript technologies with robust, cross-browser techniques to deliver a framework that is both powerfully rich and broadly compatible with older browsers.</p>
+                            <p>Kendo UI combines everything that a developer needs to build a rich JavaScript app, eliminating the traditional challenge of manually researching and combining all of the needed plug-ins, frameworks, and libraries needed to build apps. Kendo UI includes rich UI controls for desktop, mobile and data vizualization, a JavaScript DataSource, fast Templates, cross-device Drag and Drop API, Globalization, Validation and MVVM framework extensions, and more.</p>
+                            <p><a href="http://www.telerik.com/download/kendo-ui-complete">Download Kendo UI</a> and experience the difference today</p>
+                        </div>
+            </li>
+            <li>Who should use Kendo UI?
+                        <div>
+                            <p>Kendo UI is for all HTML developers. Kendo UI can be used with (or without) any server-side technology, making it the perfect front-end for every modern, browser-based HTML app. Kendo UI only requires jQuery. After that, everything that's needed is included.</p>
+                        </div>
+            </li>
+            <li>What are Kendo UI widgets?
+                        <div>
+                            <p>Kendo UI widgets are part of the Kendo UI Framework. Kendo UI widgets are grouped into three collections:</p>
+                            <ul>
+                                <li>Kendo UI Web for touch-enabled desktop development</li>
+                                <li>Kendo UI DataViz for desktop and mobile data vizualizations</li>
+                                <li>Kendo UI Mobile for mobile app development, including PhoneGap deployment</li>
+                            </ul>
+                            <p>
+                                All widgets complement the tooling you need for modern HTML5 and JavaScript development.<br />
+                                <br />
+                                The Kendo UI Framework provides more than UI, and in the future Kendo UI will offer additional tools to modern HTML developers.
+                            </p>
+                        </div>
+            </li>
+            <li>How do you use Kendo UI?
+                        <div>
+                            <p>Kendo UI is a pure JavaScript framework, so using Kendo UI is as simple as referencing JavaScript and CSS resources on your page. Once Kendo UI is configured on your page, the rich API gives you everything you need to initialize and configure an application.</p>
+                            <p>To learn more about using and installing Kendo UI, visit the Kendo UI&nbsp;<a href="http://demos.telerik.com/kendo-ui">online demos</a>.</p>
+                        </div>
+            </li>
+        </ul>
+    </section>
+    <footer>Copyright &copy; 2013 <a href="http://telerik.com/">Telerik Inc</a>. All rights reserved.</footer>
+</div>

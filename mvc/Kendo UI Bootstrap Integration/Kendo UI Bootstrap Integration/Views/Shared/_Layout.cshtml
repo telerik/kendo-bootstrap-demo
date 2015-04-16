@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Kendo UI &hearts; Twitter Bootstrap: Responsive demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.common-bootstrap.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.bootstrap.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.dataviz.min.css" />
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.dataviz.bootstrap.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="http://cdn.kendostatic.com/2015.1.408/js/kendo.all.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2015.1.408/js/kendo.timezones.min.js"></script>
+    <script src="http://cdn.kendostatic.com/2015.1.408/js/kendo.aspnetmvc.min.js"></script>
+    <script src="~/Scripts/theme-chooser.js"></script>
+    <link href="~/Content/styles.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="vendor/html5shiv.js"></script>
+        <script src="vendor/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header>
+        <div class="container" class="row">
+            <h1 class="col-sm-3 hidden-sm">Kendo UI &hearts; Bootstrap</h1>
+            <h1 class="col-sm-3 visible-sm">Kendo UI &hearts;<br />
+                Bootstrap</h1>
+
+            <button id="configure" class="visible-xs"><span class="glyphicon glyphicon-align-justify"></span></button>
+
+            <div id="configurator-wrap" class="col-sm-9 hidden-xs">
+                <div id="configurator" class="row">
+                    <label class="col-sm-4">
+                        <div class="description">Dimensions</div>
+                        @(Html.Kendo().DropDownList()
+                        .Name("dimensions")
+                        .DataTextField("Text")
+                        .DataValueField("Value")
+                        .Value("common-bootstrap")
+                        .Events(e=>e.Change("function() { window.kendoThemeChooser.changeCommon(this.value(), true);}"))
+                        .BindTo(new List<SelectListItem>() {
+                              new SelectListItem() {
+                                  Text = "Default",
+                                  Value = "common"
+                              },
+                              new SelectListItem() {
+                                  Text = "Bootstrap",
+                                  Value = "common-bootstrap"
+                              }
+                          })
+                        )
+
+
+                    </label>
+
+                    <label class="col-sm-4">
+                        <div class="description">Theme</div>
+                        @(Html.Kendo().DropDownList()
+                            .Name("theme")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .Value("bootstrap")
+                            .BindTo(new List<SelectListItem>() {
+                              new SelectListItem() {
+                                  Text = "Default",
+                                  Value = "default"
+                              },
+                              new SelectListItem() {
+                                  Text = "Blue Opal",
+                                  Value = "blueopal"
+                              },
+                              new SelectListItem() {
+                                  Text = "Bootstrap",
+                                  Value = "bootstrap"
+                              },
+                              new SelectListItem() {
+                                  Text = "Silver",
+                                  Value = "silver"
+                              },
+                              new SelectListItem() {
+                                  Text = "Uniform",
+                                  Value = "uniform"
+                              },
+                              new SelectListItem() {
+                                  Text = "Metro",
+                                  Value = "metro"
+                              },
+                              new SelectListItem() {
+                                  Text = "Black",
+                                  Value = "black"
+                              },
+                              new SelectListItem() {
+                                  Text = "Metro Black",
+                                  Value = "metroblack"
+                              },
+                              new SelectListItem() {
+                                  Text = "High Contrast",
+                                  Value = "highcontrast"
+                              },
+                              new SelectListItem() {
+                                  Text = "Moonlight",
+                                  Value = "moonlight"
+                              },
+                              new SelectListItem() {
+                                  Text = "Flat",
+                                  Value = "flat"
+                              }
+                          })
+                          .Events(e=>e.Change("onThemeChange"))
+                        )
+                    </label>
+
+                    <label class="col-sm-4">
+                        <div class="description">Font-size</div>
+                         @(Html.Kendo().DropDownList()
+                        .Name("font-size")
+                        .DataTextField("Text")
+                        .Height(204)
+                        .DataValueField("Value")
+                        .Value("14")
+                        .Events(e=>e.Change("changeFontSize"))
+                        .BindTo(new List<SelectListItem>() {
+                              new SelectListItem() {
+                                  Text = "10px",
+                                  Value = "10"
+                              },
+                              new SelectListItem() {
+                                  Text = "12px",
+                                  Value = "12"
+                              },
+                              new SelectListItem() {
+                                  Text = "14px",
+                                  Value = "14"
+                              },
+                              new SelectListItem() {
+                                  Text = "16px",
+                                  Value = "16"
+                              },
+                              new SelectListItem() {
+                                  Text = "18px",
+                                  Value = "18"
+                              },
+                              new SelectListItem() {
+                                  Text = "20px",
+                                  Value = "20"
+                              }
+                          })
+                        )
+                    </label>
+                </div>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+    <script>
+        $(document).ready(function () {
+            changeFontSize();
+
+            $("#theme-list, #dimensions-list, #font-size-list").addClass("ra-list");
+
+            $("#configure").on("click", function (e) {
+                $("#configurator-wrap").toggleClass("hidden-xs");
+                e.preventDefault();
+            });
+        })
+        function onDimensionChange() {
+            window.kendoThemeChooser.changeCommon(this.value(), true);
+        }
+
+        function onThemeChange() {
+            theme = this.value();
+            window.kendoThemeChooser.changeTheme(theme, true);
+            initCharts(theme);
+        }
+
+        function changeFontSize() {
+            var value = $("#font-size").kendoDropDownList("value");
+            $("body").css("font-size", value + "px");
+        }
+
+        function resizeTabStripContent() {
+            kendo.resize("#tabstrip");
+        }
+
+        $(window).resize(resizeTabStripContent);
+    </script>
+</body>
+</html>
