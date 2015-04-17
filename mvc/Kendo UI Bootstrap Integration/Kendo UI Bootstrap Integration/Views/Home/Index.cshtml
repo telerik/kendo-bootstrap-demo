@@ -1,4 +1,6 @@
-﻿<div id="example" class="container">
+﻿@model IEnumerable<Kendo_UI_Bootstrap_Integration.Models.ChartViewModel>
+
+<div id="example" class="container">
     <section class="well">
         <h2 class="ra-well-title">What is this page?</h2>
 
@@ -49,13 +51,35 @@
                         tabstrip.Add().Text("<span class='km-icon revenue'></span><span class='hidden-xs'>Revenue</span>")
                                 .Encoded(false)
                                 .Selected(true)
-                                .Content(@<text></text>);
+                                .Content(@<text>
+
+            </text>);
                         tabstrip.Add().Text("<span class='km-icon spd'></span><span class='hidden-xs'>Sales / day</span>")
                                 .Encoded(false)
-                                .Content(@<text></text>);
+                                .Content(@<text>
+                                            @(Html.Kendo().Chart(Model)
+                                            .Name("sales-per-day")
+                                            .Transitions(false)
+                                            .Theme("bootstrap")
+                                            .ChartArea(chart => chart.Margin(0, 10, 0, 0).Background("transparent"))
+                                            .Legend(l => l.Visible(false))
+                                            .SeriesDefaults(s => s.VerticalBullet())
+                                            .CategoryAxis(a => a.Categories(m => m.Date)
+                                                .Labels(l => l.Visible(false))
+                                                .MajorGridLines(m => m.Visible(false)))
+                                            .Series(s => s.VerticalBullet(m => m.Value, m => m.Target))
+                                            .Tooltip(t => t.Visible(false))
+                                            .ValueAxis(v => v.Date().Labels(l => l.Step(2)).PlotBands(bands =>
+                                            {
+                                                bands.Add().From(10000).To(20000).Color("#ff0000").Opacity(0.05);
+                                            }))
+                                            )
+            </text>);
                         tabstrip.Add().Text("<span class='km-icon spr'></span><span class='hidden-xs'>Sales / region</span>")
                                 .Encoded(false)
-                                .Content(@<text></text>);
+                                .Content(@<text>
+
+            </text>);
                         tabstrip.Add().Text("<span class='km-icon share'></span><span class='hidden-xs'>Market share</span>")
                                 .Encoded(false)
                                 .Content(@<text></text>);
