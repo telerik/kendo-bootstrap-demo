@@ -112,10 +112,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ListView.cs" />
+    <Compile Include="Models\OrdersViewModel.cs" />
+    <Compile Include="Models\Task.cs" />
+    <Compile Include="Models\TaskViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
+    <Content Include="assets\avatar.jpg" />
+    <Content Include="assets\photos\1.jpg" />
+    <Content Include="assets\photos\10.jpg" />
+    <Content Include="assets\photos\11.jpg" />
+    <Content Include="assets\photos\12.jpg" />
+    <Content Include="assets\photos\2.jpg" />
+    <Content Include="assets\photos\3.jpg" />
+    <Content Include="assets\photos\4.jpg" />
+    <Content Include="assets\photos\5.jpg" />
+    <Content Include="assets\photos\6.jpg" />
+    <Content Include="assets\photos\7.jpg" />
+    <Content Include="assets\photos\8.jpg" />
+    <Content Include="assets\photos\9.jpg" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\kendo\2015.1.408\Black\editor.png" />
     <Content Include="Content\kendo\2015.1.408\Black\imagebrowser.png" />
@@ -416,8 +432,6 @@
     <Content Include="Images\heroAccent.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\kendo\2015.1.408\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <Content Include="Content\kendo\2015.1.408\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
     <Content Include="Content\kendo\2015.1.408\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
@@ -432,10 +446,7 @@
     <Content Include="Content\kendo\2015.1.408\fonts\DejaVu\DejaVuSerif.ttf" />
     <Content Include="Content\kendo\2015.1.408\images\kendoui.ttf" />
     <Content Include="Content\kendo\2015.1.408\images\kendoui.woff" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\kendo.modernizr.custom.js" />
+    <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\kendo\2015.1.408\angular.min.js" />
     <Content Include="Scripts\kendo\2015.1.408\jquery.min.js" />
     <Content Include="Scripts\kendo\2015.1.408\jszip.min.js" />
@@ -587,7 +598,6 @@
     <Content Include="Scripts\kendo\2015.1.408\messages\kendo.messages.zh-HK.min.js" />
     <Content Include="Scripts\kendo\2015.1.408\messages\kendo.messages.zh-TW.min.js" />
     <Content Include="Scripts\kendo\2015.1.408\pako_deflate.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\theme-chooser.js" />
@@ -600,7 +610,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
@@ -726,7 +735,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
