@@ -224,6 +224,21 @@ namespace Kendo_UI_Bootstrap_Integration.Controllers
             return Json(data, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult AliceMutton()
+        {
+            List<DonutChartViewModel> data = new List<DonutChartViewModel>() 
+            {
+                new DonutChartViewModel("2011", "Canterbury", 30),
+                new DonutChartViewModel("2011", "Manchester", 45),
+                new DonutChartViewModel("2011", "Rochester", 25),
+                new DonutChartViewModel("2012", "Canterbury", 64),
+                new DonutChartViewModel("2012", "Manchester", 12),
+                new DonutChartViewModel("2012", "Rochester", 24)
+            };
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";
