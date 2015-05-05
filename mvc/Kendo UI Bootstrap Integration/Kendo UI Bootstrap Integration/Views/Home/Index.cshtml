@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Kendo_UI_Bootstrap_Integration.Models.ChartViewModel>
+﻿@*@model IEnumerable<Kendo_UI_Bootstrap_Integration.Models.ChartViewModel>*@
 
 <div id="example" class="container">
     <section class="well">
@@ -9,6 +9,8 @@
         <p>The grid layout and responsive CSS is provided by Bootstrap, and widgets are provided by Kendo UI.</p>
 
         <p>Resize the page or customize it using the pickers above to see its responsive features.</p>
+
+        <p>The source for this demo is <a href="https://github.com/telerik/kendo-bootstrap-demo">available on GitHub</a></p>
     </section>
 
     @(Html.Kendo().Menu()
@@ -52,13 +54,44 @@
                                 .Encoded(false)
                                 .Selected(true)
                                 .Content(@<text>
-
+                                        @(Html.Kendo().Chart<Kendo_UI_Bootstrap_Integration.Models.RevenueViewModel>()
+                                            .Name("revenue")
+                                            .DataSource(ds => ds.Read(read => read.Action("Revenue", "Home")))
+                                            .Transitions(false)
+                                            .Theme("bootstrap")
+                                            .ChartArea(chart => chart.Margin(10, 5, 0, 10).Background("transparent"))
+                                            .Legend(l => l.Visible(false))
+                                            .SeriesDefaults(s=>s
+                                                .Column()
+                                                .Stack(true))
+                                            .CategoryAxis(a=>a
+                                                .Line(l=>l.Visible(false))
+                                                .MajorGridLines(m=>m.Visible(false))
+                                                .Labels(l=>l.Visible(false)) 
+                                                .Categories(m=>m.Date))
+                                            .Series(series => {
+                                               series.Column(model => model.Canterbury).Name("Canterbury");
+                                               series.Column(model => model.Manchester).Name("Manchester");
+                                               series.Column(model => model.Rochester).Name("Rochester");
+                                            })
+                                            .ValueAxis(v=>v
+                                                .Numeric()
+                                                .Labels(l=>l
+                                                    .Step(2)
+                                                    .Template("$#= value #")
+                                                )
+                                                .PlotBands(bands => bands
+                                                    .Add().From(30000).To(50000).Color("#a7c9e6").Opacity(0.3)
+                                                ))
+                                           .Tooltip(t=>t.Visible(true).Template("#= series.name # <br /> #= category #: $#= value #"))
+                                        )
             </text>);
                         tabstrip.Add().Text("<span class='km-icon spd'></span><span class='hidden-xs'>Sales / day</span>")
                                 .Encoded(false)
                                 .Content(@<text>
-                                            @(Html.Kendo().Chart(Model)
+                                            @(Html.Kendo().Chart<Kendo_UI_Bootstrap_Integration.Models.SalesPerDayViewModel>()
                                             .Name("sales-per-day")
+                                            .DataSource(ds => ds.Read(read => read.Action("SalesPerDay", "Home")))
                                             .Transitions(false)
                                             .Theme("bootstrap")
                                             .ChartArea(chart => chart.Margin(0, 10, 0, 0).Background("transparent"))
@@ -78,7 +111,31 @@
                         tabstrip.Add().Text("<span class='km-icon spr'></span><span class='hidden-xs'>Sales / region</span>")
                                 .Encoded(false)
                                 .Content(@<text>
-
+                                        @(Html.Kendo().Chart<Kendo_UI_Bootstrap_Integration.Models.SalesPerRegionViewModel>()
+                                            .Name("sales-per-region")
+                                            .DataSource(ds => ds.Read(read => read.Action("SalesPerRegion", "Home")))
+                                            .Transitions(false)
+                                            .Theme("bootstrap")
+                                            .Legend(l=>l.Visible(false))
+                                            .ChartArea(c=>c.Margin(10, 8, 0, 10).Background("transparent"))        
+                                            .SeriesDefaults(s=>s
+                                                .Area()
+                                                .Line(l=>l.Style(ChartAreaStyle.Smooth))
+                                                .Stack(true))                                       
+                                            .CategoryAxis(a=>a
+                                                .Categories(m=>m.Date)
+                                                .Line(l=>l.Visible(false))
+                                                .Labels(l=>l.Visible(false))
+                                                .MajorGridLines(l=>l.Visible(false))
+                                                )
+                                           .Tooltip(t=>t.Visible(false).Template("#= series.name # <br /> #= category #: #= value #"))
+                                           .Series(series => {
+                                               series.Area(model => model.Canterbury).Name("Canterbury");
+                                               series.Area(model => model.Manchester).Name("Manchester");
+                                               series.Area(model => model.Rochester).Name("Rochester");
+                                            })
+                                            .ValueAxis(v=>v.Numeric().Labels(l=>l.Step(2)))
+                                        )
             </text>);
                         tabstrip.Add().Text("<span class='km-icon share'></span><span class='hidden-xs'>Market share</span>")
                                 .Encoded(false)
@@ -230,8 +287,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="bio">Short bio</label>
                 <div class="col-sm-10">
-                    @(Html.Kendo().Editor()
-                    .Name("bio"))
+                    @(Html.Kendo().Editor().Name("bio"))
                 </div>
             </div>
         </div>

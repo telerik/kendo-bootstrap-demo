@@ -5,13 +5,14 @@ using System.Web;
 
 namespace Kendo_UI_Bootstrap_Integration.Models
 {
-    public class ChartViewModel
+    public class RevenueViewModel
     {
-        public ChartViewModel(string date, double value, double target) 
+        public RevenueViewModel(string date, double canterbury, double manchester, double rochester) 
         {
             Date = date;
-            Value = value;
-            Target = target;
+            Canterbury = canterbury;
+            Manchester = manchester;
+            Rochester = rochester;
         }
 
         public string Date
@@ -20,13 +21,19 @@ namespace Kendo_UI_Bootstrap_Integration.Models
             set;
         }
 
-        public double Value
+        public double Canterbury
         {
             get;
             set;
         }
 
-        public double Target
+        public double Manchester
+        {
+            get;
+            set;
+        }
+
+        public double Rochester
         {
             get;
             set;
