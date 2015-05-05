@@ -239,6 +239,51 @@ namespace Kendo_UI_Bootstrap_Integration.Controllers
             return Json(data, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult Gravad()
+        {
+            List<DonutChartViewModel> data = new List<DonutChartViewModel>() 
+            {
+                new DonutChartViewModel("2011", "Canterbury", 22),
+                new DonutChartViewModel("2011", "Manchester", 18),
+                new DonutChartViewModel("2011", "Rochester", 60),
+                new DonutChartViewModel("2012", "Canterbury", 35),
+                new DonutChartViewModel("2012", "Manchester", 20),
+                new DonutChartViewModel("2012", "Rochester", 45)
+            };
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Inlagd()
+        {
+            List<DonutChartViewModel> data = new List<DonutChartViewModel>() 
+            {
+                new DonutChartViewModel("2011", "Canterbury", 30),
+                new DonutChartViewModel("2011", "Manchester", 21),
+                new DonutChartViewModel("2011", "Rochester", 49),
+                new DonutChartViewModel("2012", "Canterbury", 32),
+                new DonutChartViewModel("2012", "Manchester", 25),
+                new DonutChartViewModel("2012", "Rochester", 43)
+            };
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Spegesild()
+        {
+            List<DonutChartViewModel> data = new List<DonutChartViewModel>() 
+            {
+                new DonutChartViewModel("2011", "Canterbury", 37),
+                new DonutChartViewModel("2011", "Manchester", 42),
+                new DonutChartViewModel("2011", "Rochester", 21),
+                new DonutChartViewModel("2012", "Canterbury", 32),
+                new DonutChartViewModel("2012", "Manchester", 30),
+                new DonutChartViewModel("2012", "Rochester", 38)
+            };
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";

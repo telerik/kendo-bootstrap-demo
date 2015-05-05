@@ -141,12 +141,82 @@
                                 .Encoded(false)
                                 .Content(@<text>
                                             @(Html.Kendo().Chart<Kendo_UI_Bootstrap_Integration.Models.DonutChartViewModel>()
+                                                .HtmlAttributes(new { @class = "market-donut"})
                                                 .Name("market-alice-mutton")
                                                 .DataSource(ds => ds.Read(read => read.Action("AliceMutton", "Home")).Group(g => g.Add(d=> d.Series)))
                                                 .Transitions(false)
                                                 .Theme("bootstrap")
                                                 .Title(t => t
                                                     .Text("Alice Mutton")
+                                                    .Position(ChartTitlePosition.Bottom)
+                                                    .Padding(4)
+                                                    .Margin(0))
+                                                .Legend(l => l.Visible(false))
+                                                .ChartArea(c => c
+                                                    .Margin(15, 0, 0, 0)
+                                                    .Background("transparent"))
+                                                .Series(series => {
+                                                    series.Donut(d => d.Value, d => d.Category);
+                                                })
+                                                .Tooltip(t=>t
+                                                    .Visible(true)
+                                                    .Template("#= category # (#= series.name #): #= value #%"))
+                                            )
+
+                                            @(Html.Kendo().Chart<Kendo_UI_Bootstrap_Integration.Models.DonutChartViewModel>()
+                                                .HtmlAttributes(new { @class = "market-donut"})
+                                                .Name("market-gravad")
+                                                .DataSource(ds => ds.Read(read => read.Action("Gravad", "Home")).Group(g => g.Add(d=> d.Series)))
+                                                .Transitions(false)
+                                                .Theme("bootstrap")
+                                                .Title(t => t
+                                                    .Text("Gravad lax")
+                                                    .Position(ChartTitlePosition.Bottom)
+                                                    .Padding(4)
+                                                    .Margin(0))
+                                                .Legend(l => l.Visible(false))
+                                                .ChartArea(c => c
+                                                    .Margin(15, 0, 0, 0)
+                                                    .Background("transparent"))
+                                                .Series(series => {
+                                                    series.Donut(d => d.Value, d => d.Category);
+                                                })
+                                                .Tooltip(t=>t
+                                                    .Visible(true)
+                                                    .Template("#= category # (#= series.name #): #= value #%"))
+                                            )
+
+                                            @(Html.Kendo().Chart<Kendo_UI_Bootstrap_Integration.Models.DonutChartViewModel>()
+                                                .HtmlAttributes(new { @class = "market-donut"})
+                                                .Name("market-inlagd")
+                                                .DataSource(ds => ds.Read(read => read.Action("Inlagd", "Home")).Group(g => g.Add(d=> d.Series)))
+                                                .Transitions(false)
+                                                .Theme("bootstrap")
+                                                .Title(t => t
+                                                    .Text("Inlagd Sill")
+                                                    .Position(ChartTitlePosition.Bottom)
+                                                    .Padding(4)
+                                                    .Margin(0))
+                                                .Legend(l => l.Visible(false))
+                                                .ChartArea(c => c
+                                                    .Margin(15, 0, 0, 0)
+                                                    .Background("transparent"))
+                                                .Series(series => {
+                                                    series.Donut(d => d.Value, d => d.Category);
+                                                })
+                                                .Tooltip(t=>t
+                                                    .Visible(true)
+                                                    .Template("#= category # (#= series.name #): #= value #%"))
+                                            )
+
+                                       @(Html.Kendo().Chart<Kendo_UI_Bootstrap_Integration.Models.DonutChartViewModel>()
+                                                .HtmlAttributes(new { @class = "market-donut"})
+                                                .Name("market-spageslid")
+                                                .DataSource(ds => ds.Read(read => read.Action("Spegesild", "Home")).Group(g => g.Add(d=> d.Series)))
+                                                .Transitions(false)
+                                                .Theme("bootstrap")
+                                                .Title(t => t
+                                                    .Text("Spageslid")
                                                     .Position(ChartTitlePosition.Bottom)
                                                     .Padding(4)
                                                     .Margin(0))
