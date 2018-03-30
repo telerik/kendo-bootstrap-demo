@@ -2,7 +2,7 @@
 
 This demo page shows how to use [Kendo UI](http://www.telerik.com/kendo-ui) alongside [Twitter Bootstrap](http://getbootstrap.com/).
 
-The relevant ASP.NET MVC demo is available in [this repository](https://github.com/telerik/mvc-bootstrap-demo).
+The relevant ASP.NET MVC demo is available in [this repository](https://github.com/telerik/mvc-bootstrap-demo). The relevant PHP demo is available in [this repository](https://github.com/telerik/php-bootstrap-demo).
 
 The grid layout and responsive CSS is provided by Bootstrap, and widgets are provided by Kendo UI. To see the responsive features, you can resize the page or customize it using the pickers on top.
 
