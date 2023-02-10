@@ -4,65 +4,56 @@
         <title>Kendo UI &hearts; Twitter Bootstrap: Responsive demo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <link rel="stylesheet" href="vendor/bootstrap.min.css" />
-        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.common-bootstrap.min.css" />
-        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.bootstrap.min.css" />
-        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.dataviz.min.css" />
-        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.dataviz.bootstrap.min.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+   
+	    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/5.11.0/default/default-main.css" />
 
-        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
-        <script src="https://kendo.cdn.telerik.com/2018.1.221/js/kendo.all.min.js"></script>
-        <script src="https://kendo.cdn.telerik.com/2018.1.221/js/kendo.timezones.min.js"></script>
-
-
-        <script src="theme-chooser.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2023.1.117/js/kendo.all.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2023.1.117/js/kendo.timezones.min.js"></script>
 
         <link rel="stylesheet" href="styles.css" />
-
-        <!--[if lt IE 9]>
-        <script src="vendor/html5shiv.js"></script>
-        <script src="vendor/respond.min.js"></script>
-        <![endif]-->
     </head>
     <body>
         <header>
-            <div class="container" class="row">
-                <h1 class="col-sm-3 hidden-sm">Kendo UI &hearts; Bootstrap</h1>
-                <h1 class="col-sm-3 visible-sm">Kendo UI &hearts;<br/> Bootstrap</h1>
-
-                <button id="configure" class="visible-xs"><span class="glyphicon glyphicon-align-justify"></span></button>
-
-                <div id="configurator-wrap" class="col-sm-9 hidden-xs">
-                    <div id="configurator" class="row">
-                        <label class="col-sm-4">
-                            <div class="description">Dimensions</div>
-                            <select id="dimensions"></select>
-                        </label>
-
-                        <label class="col-sm-4">
-                            <div class="description">Theme</div>
-                            <select id="theme"></select>
-                        </label>
-
-                        <label class="col-sm-4">
-                            <div class="description">Font-size</div>
-                            <select id="font-size"></select>
-                        </label>
+            <div class="container-sm">
+                <div class="row">
+                    <h1 class="col-md-3 header-description">Kendo UI &hearts; Bootstrap</h1>
+    
+                    <button id="configure" class="d-none d-sm-block d-md-none"><span class="glyphicon glyphicon-align-justify"></span></button>
+    
+                    <div id="configurator-wrap" class="col-md-9">
+                        <div id="configurator" class="row">
+                            <label class="col-md-4 col-sm-12 col-xs-12">
+                                <div class="description">Theme</div>
+                                <select id="theme"></select>
+                            </label>
+    
+                            <label class="col-md-4 col-sm-12 col-xs-12">
+                                <div class="description">Swatch</div>
+                                <select id="swatch"></select>
+                            </label>
+    
+                            <label class="col-md-4 col-sm-12 col-xs-12">
+                                <div class="description">Font-size</div>
+                                <select id="font-size"></select>
+                            </label>
+                        </div>
                     </div>
-                </div>
+                </div>                
             </div>
         </header>
 
         <div id="example" class="container">
-            <section class="well">
-                <h2 class="ra-well-title">What is this page?</h2>
+            <section class="card">
+                <div class="card-header">What is this page?</div>
+                <div class="card-body">
+                    <p>This page shows how to use Kendo UI alongside Twitter Bootstrap.</p>
 
-                <p>This page shows how to use Kendo UI alongside Twitter Bootstrap.</p>
-
-                <p>The grid layout and responsive CSS is provided by Bootstrap, and widgets are provided by Kendo UI.</p>
-
-                <p>Resize the page or customize it using the pickers above to see its responsive features.</p>
+                    <p>The grid layout and responsive CSS is provided by Bootstrap, and widgets are provided by Kendo UI.</p>
+    
+                    <p>Resize the page or customize it using the pickers above to see its responsive features.</p>
+                </div>                
             </section>
 
             <ul id="menu">
@@ -76,27 +67,29 @@
 
             <div class="row clearfix">
                 <div class="col-lg-4">
-                    <section id="profile" class="well">
-                        <h2 class="ra-well-title">Profile</h2>
+                    <section id="profile" class="card ra-section">
+                        <div class="card-header">Profile</div>
 
-                        <div class="row">
-                            <div class="col-lg-5 col-sm-2">
-                                <img src="assets/avatar.jpg" class="ra-avatar img-responsive" />
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-3">
+                                    <img src="assets/avatar.jpg" class="avatar img-fluid" />
+                                </div>
+    
+                                <div class="col-lg-8 col-md-9">
+                                    <span class="ra-first-name">Jonathan</span>
+                                    <span class="ra-last-name">Dodsworth</span>
+                                    <div class="ra-position">Inside Sales Coordinator</div>
+                                </div>
                             </div>
-
-                            <div class="col-lg-7 col-sm-2">
-                                <span class="ra-first-name">Jonathan</span>
-                                <span class="ra-last-name">Dodsworth</span>
-                                <div class="ra-position">Inside Sales Coordinator</div>
-                            </div>
-                        </div>
+                        </div>                        
                     </section>
                 </div>
 
                 <div class="col-lg-8">
                     <div id="tabstrip" class="ra-section">
                         <ul>
-                            <li class="k-state-active"><span class="km-icon revenue"></span><span class="hidden-xs">Revenue</span></li>
+                            <li class="k-active"><span class="km-icon revenue"></span><span class="hidden-xs">Revenue</span></li>
                             <li><span class="km-icon spd"></span><span class="hidden-xs">Sales / day</span></li>
                             <li><span class="km-icon spr"></span><span class="hidden-xs">Sales / region</span></li>
                         <li><span class="km-icon share"></span><span class="hidden-xs">Market share</span></li>
@@ -114,158 +107,162 @@
                 </div>
             </div>
 
-            <section class="well">
-                <h2 class="ra-well-title">Profile Setup</h2>
+            <section class="card">
+                <div class="card-header">Profile Setup</div>
 
-                <div class="form-horizontal form-widgets col-sm-6">
-                    <div class="form-group">
-                        <label class="control-label col-sm-4" for="name">Name</label>
-                        <div class="col-sm-8 col-md-6">
-                            <input id="name" value="Johnatan Dodsworth" />
+                <div class="card-body row">
+                    <div class="form-widgets col-md-6">
+                        <div class="row mb-3">
+                            <label class="col-sm-12 col-md-4 form-label text-md-end" for="name">Name</label>
+                            <div class="col-sm-12 col-md-8 col-lg-6">
+                                <input id="name" type="text" value="Johnatan Dodsworth" />
+                            </div>
+                        </div> 
+    
+                        <div class="row mb-3">
+                            <label class="col-sm-12 col-md-4 form-label text-md-end" for="birthday">Birthday</label>
+                            <div class="col-sm-12 col-md-8 col-lg-6">
+                                <input type="date" value="10/09/1979" />
+                            </div>
+                        </div>
+    
+                        <div class="row mb-3">
+                            <label class="col-sm-12 col-md-4 form-label text-md-end" for="gender">Gender</label>
+                            <div class="col-sm-12 col-md-8 col-lg-6">
+                                <select id="gender">
+                                    <option selected>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </div>
+                        </div>
+    
+                        <div class="row mb-3">
+                            <label class="col-sm-12 col-md-4 form-label text-md-end" for="language">Language</label>
+                            <div class="col-sm-12 col-md-8 col-lg-6">
+                                <select id="language">
+                                    <option selected>English</option>
+                                    <option>German</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-sm-4" for="birthday">Birthday</label>
-                        <div class="col-sm-8 col-md-6">
-                            <input type="date" value="10/09/1979" />
+    
+                    <div class="form-widgets col-md-6">
+                        <div class="row mb-3">
+                            <label class="col-sm-12 col-md-4 form-label text-md-end" for="occupation">Occupation</label>
+                            <div class="col-sm-12 col-md-8 col-lg-6">
+                                <input id="occupation" type="text" placeholder="e.g. Developer" />
+                            </div>
+                        </div>
+    
+                        <div class="row mb-3">
+                            <label class="col-sm-12 col-md-4 form-label text-md-end" for="skills">Skills</label>
+                            <div class="col-sm-12 col-md-8 col-lg-6">
+                                <select id="skills" multiple>
+                                    <option>C</option>
+                                    <option>C++</option>
+                                    <option selected>C#</option>
+                                    <option>JavaScript</option>
+                                    <option selected>jQuery</option>
+                                    <option>Git</option>
+                                    <option>Node.js</option>
+                                    <option>Ruby</option>
+                                    <option>Ruby on Rails</option>
+                                    <option>Kendo UI</option>
+                                </select>
+                            </div>
+                        </div>
+    
+                        <div class="row mb-3">
+                            <label class="col-sm-4 col-form-label col-form-label-md text-md-end" for="experience">Experience</label>
+                            <div class="col-sm-12 col-md-8 col-lg-6">
+                                <input id="experience" type="number" value="4" />
+                            </div>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-sm-4" for="gender">Gender</label>
-                        <div class="col-sm-8 col-md-6">
-                            <select id="gender">
-                                <option selected>Male</option>
-                                <option>Female</option>
-                            </select>
+    
+                    <div class="clearfix"></div>
+    
+                    <div class="form-widgets col-sm-12">
+                        <div class="row mb-3">
+                            <label class="col-sm-12 col-md-2 text-md-end" for="bio">Short bio</label>
+                            <div class="col-sm-12 col-md-10 col-lg-9">
+                                <textarea id="bio"></textarea>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-sm-4" for="language">Language</label>
-                        <div class="col-sm-8 col-md-6">
-                            <select id="language">
-                                <option selected>English</option>
-                                <option>German</option>
-                            </select>
-                        </div>
+    
+                    <div class="buttons-wrap">
+                        <button class="app-button">Cancel</button>
+                        <button class="app-button">Update</button>
                     </div>
-                </div>
-
-                <div class="form-horizontal form-widgets col-sm-6">
-                    <div class="form-group">
-                        <label class="control-label col-sm-4" for="occupation">Occupation</label>
-                        <div class="col-sm-8 col-md-6">
-                            <input id="occupation" placeholder="e.g. Developer" />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-sm-4" for="skills">Skills</label>
-                        <div class="col-sm-8 col-md-6">
-                            <select id="skills" multiple>
-                                <option>C</option>
-                                <option>C++</option>
-                                <option selected>C#</option>
-                                <option>JavaScript</option>
-                                <option selected>jQuery</option>
-                                <option>Git</option>
-                                <option>Node.js</option>
-                                <option>Ruby</option>
-                                <option>Ruby on Rails</option>
-                                <option>Kendo UI</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-sm-4" for="experience">Experience</label>
-                        <div class="col-sm-8 col-md-6">
-                            <input id="experience" type="number" value="4" />
-                        </div>
-                    </div>
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="form-horizontal form-widgets col-sm-12">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="bio">Short bio</label>
-                        <div class="col-sm-10">
-                            <textarea id="bio"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="buttons-wrap">
-                    <button class="k-button k-state-default">Cancel</button>
-                    <button class="k-button k-state-default">Update</button>
-                </div>
+                </div>                
             </section>
 
             <div id="orders" class="ra-section"></div>
 
             <div id="schedule" class="ra-section"></div>
 
-            <section id="gallery" class="well">
-                <h2 class="ra-well-title">Latest photo uploads</h2>
+            <script id="listview-template" type="x-kendo-template">
+                <li class="col-xs-6 col-md-4 col-lg-2">
+                    <figure>
+                        <img src="assets/photos/#= id #.jpg" class="img-fluid" />
+                        <figcaption class="d-none d-sm-block">
+                            <h4>#: title #</h4>
+                            <p class="d-sm-none d-md-block">
+                                #: description #
+                            </p>
+                        </figcaption>
+                    </figure>
+                </li>
+            </script>
 
-                <script id="listview-template" type="x-kendo-template">
-                    <li class="col-xs-6 col-md-4 col-lg-2">
-                        <figure>
-                            <img src="assets/photos/#= id #.jpg" class="img-responsive" />
-                            <figcaption class="hidden-xs">
-                                <h4>#: title #</h4>
-                                <p class="hidden-sm">
-                                    #: description #
-                                </p>
-                            </figcaption>
-                        </figure>
-                    </li>
-                </script>
+            <section id="gallery" class="card">
+                <div class="card-header">Latest photo uploads</div>  
 
-                <ul id="listview" class="ra-well-overlay row"></ul>
+                <ul id="listview"></ul>
             </section>
 
-            <section id="faq" class="well">
-                <h2 class="ra-well-title"><abbr title="Frequently Asked Questions">FAQ</abbr></h2>
+            <section id="faq" class="card">
+                <div class="card-header"><abbr title="Frequently Asked Questions">FAQ</abbr></div>
 
-                <ul id="panelbar" class="ra-well-overlay">
-                    <li class="k-state-active">
-                        What is Kendo UI?
-                        <div>
-                            <p>Kendo UI is a HTML5, jQuery-based framework for building modern HTML apps. Kendo UI combines the best of emerging HTML5, CSS3, and JavaScript technologies with robust, cross-browser techniques to deliver a framework that is both powerfully rich and broadly compatible with older browsers.</p>
-                            <p>Kendo UI combines everything that a developer needs to build a rich JavaScript app, eliminating the traditional challenge of manually researching and combining all of the needed plug-ins, frameworks, and libraries needed to build apps. Kendo UI includes rich UI controls for desktop, mobile and data vizualization, a JavaScript DataSource, fast Templates, cross-device Drag and Drop API, Globalization, Validation and MVVM framework extensions, and more.</p>
-                            <p><a href="https://www.telerik.com/download/kendo-ui-complete">Download Kendo UI</a> and experience the difference today</p>
-                        </div>
-                    </li>
-                    <li>
-                        Who should use Kendo UI?
-                        <div>
-                            <p>Kendo UI is for all HTML developers. Kendo UI can be used with (or without) any server-side technology, making it the perfect front-end for every modern, browser-based HTML app. Kendo UI only requires jQuery. After that, everything that's needed is included.</p>
-                        </div>
-                    </li>
-                    <li>
-                        What are Kendo UI widgets?
-                        <div>
-                            <p>Kendo UI widgets are part of the Kendo UI Framework. Kendo UI widgets are grouped into three collections:</p>
-                            <ul>
-                                <li>Kendo UI Web for touch-enabled desktop development</li>
-                                <li>Kendo UI DataViz for desktop and mobile data vizualizations</li>
-                                <li>Kendo UI Mobile for mobile app development, including PhoneGap deployment</li>
-                            </ul>
-                            <p>All widgets complement the tooling you need for modern HTML5 and JavaScript development.<br /> <br /> The Kendo UI Framework provides more than UI, and in the future Kendo UI will offer additional tools to modern HTML developers.</p>
-                        </div>
-                    </li>
-                    <li>
-                        How do you use Kendo UI?
-                        <div>
-                            <p>Kendo UI is a pure JavaScript framework, so using Kendo UI is as simple as referencing JavaScript and CSS resources on your page. Once Kendo UI is configured on your page, the rich API gives you everything you need to initialize and configure an application.</p>
-                            <p>To learn more about using and installing Kendo UI, visit the Kendo UI&nbsp;<a href="https://demos.telerik.com/kendo-ui">online demos</a>.</p>
-                        </div>
-                    </li>
-                </ul>
+                <div class="card-body">
+                    <ul id="panelbar">
+                        <li class="k-state-active">
+                            What is Kendo UI?
+                            <div>
+                                <p>Kendo UI is a HTML5, jQuery-based framework for building modern HTML apps. Kendo UI combines the best of emerging HTML5, CSS3, and JavaScript technologies with robust, cross-browser techniques to deliver a framework that is both powerfully rich and broadly compatible with older browsers.</p>
+                                <p>Kendo UI combines everything that a developer needs to build a rich JavaScript app, eliminating the traditional challenge of manually researching and combining all of the needed plug-ins, frameworks, and libraries needed to build apps. Kendo UI includes rich UI controls for desktop, mobile and data vizualization, a JavaScript DataSource, fast Templates, cross-device Drag and Drop API, Globalization, Validation and MVVM framework extensions, and more.</p>
+                                <p><a href="https://www.telerik.com/download/kendo-ui-complete">Download Kendo UI</a> and experience the difference today</p>
+                            </div>
+                        </li>
+                        <li>
+                            Who should use Kendo UI?
+                            <div>
+                                <p>Kendo UI is for all HTML developers. Kendo UI can be used with (or without) any server-side technology, making it the perfect front-end for every modern, browser-based HTML app. Kendo UI only requires jQuery. After that, everything that's needed is included.</p>
+                            </div>
+                        </li>
+                        <li>
+                            What are Kendo UI widgets?
+                            <div>
+                                <p>Kendo UI widgets are part of the Kendo UI Framework. Kendo UI widgets are grouped into three collections:</p>
+                                <ul>
+                                    <li>Kendo UI Web for touch-enabled desktop development</li>
+                                    <li>Kendo UI DataViz for desktop and mobile data vizualizations</li>
+                                    <li>Kendo UI Mobile for mobile app development, including PhoneGap deployment</li>
+                                </ul>
+                                <p>All widgets complement the tooling you need for modern HTML5 and JavaScript development.<br /> <br /> The Kendo UI Framework provides more than UI, and in the future Kendo UI will offer additional tools to modern HTML developers.</p>
+                            </div>
+                        </li>
+                        <li>
+                            How do you use Kendo UI?
+                            <div>
+                                <p>Kendo UI is a pure JavaScript framework, so using Kendo UI is as simple as referencing JavaScript and CSS resources on your page. Once Kendo UI is configured on your page, the rich API gives you everything you need to initialize and configure an application.</p>
+                                <p>To learn more about using and installing Kendo UI, visit the Kendo UI&nbsp;<a href="https://demos.telerik.com/kendo-ui">online demos</a>.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>                
             </section>
 
             <footer>Copyright &copy; <script>document.write(new Date().getFullYear());</script> <a href="https://www.telerik.com/">Telerik Inc</a>. All rights reserved.</footer>
@@ -278,47 +275,75 @@
                 return /(.*\/)[^\/]*$/gi.exec(url)[1];
             }
 
-            $("#dimensions").kendoDropDownList({
-                dataTextField: "text",
-                dataValueField: "value",
-                value: "common-bootstrap",
-                dataSource: [
-                    { text: "Default", value: "common" },
-                    { text: "Bootstrap", value: "common-bootstrap" }
-                ],
-                change: function(e) {
-                    window.kendoThemeChooser.changeCommon(this.value(), true);
-                }
+            $("#theme").kendoDropDownList({
+                dataTextField: "themeName",
+				dataValueField: "themeId",
+				dataSource: [
+				  { themeName: "Default", themeId: 1 },
+				  { themeName: "Bootstrap", themeId: 2 },
+				  { themeName: "Material", themeId: 3 },
+				  { themeName: "Classic", themeId: 4 },
+				]
             });
 
-            $("#theme").kendoDropDownList({
-                dataTextField: "text",
-                dataValueField: "value",
-                value: "bootstrap",
+            $("#swatch").kendoDropDownList({
+                cascadeFrom: "theme",			
+				dataTextField: "text",
+				dataValueField: "value",
+				change: function (e) {				
+				  
+				    var themeName = $("#theme").data('kendoDropDownList').text().toLowerCase();
+				    var swatch = this.value();	
+                    
+				    $("link").each(function() {
+				        if (this.href.indexOf('/themes/') != -1) {
+
+				    		  var themeVersion = this.href.split('/')[4];
+				            var curHref = 'https://kendo.cdn.telerik.com/themes/'+ themeVersion + '/' + themeName+ '/'+ swatch + '.css';						  
+				    		  this.href = curHref;
+				        }
+				    });
+
+				    let isBlack = swatch.includes("dark");
+				    if(isBlack){
+				    	  $("html").addClass("k-black");
+				    }else{
+				    	  $("html").removeClass("k-black");
+				    }				 
+				},
                 dataSource: [
-                    { text: "Default", value: "default" },
-                    { text: "Blue Opal", value: "blueopal" },
-                    { text: "Bootstrap", value: "bootstrap" },
-                    { text: "Silver", value: "silver" },
-                    { text: "Uniform", value: "uniform" },
-                    { text: "Metro", value: "metro" },
-                    { text: "Black", value: "black" },
-                    { text: "Metro Black", value: "metroblack" },
-                    { text: "High Contrast", value: "highcontrast" },
-                    { text: "Moonlight", value: "moonlight" },
-                    { text: "Flat", value: "flat" }
-                ],
-                change: function(e) {
-                    theme = this.value();
-                    window.kendoThemeChooser.changeTheme(theme, true);
-                    initCharts(theme);
-                }
+                    { text: "Default Main", value: "default-main", themeId: 1 },
+					{ text: "Default Main Dark", value: "default-main-dark", themeId: 1 },
+					{ text: "Nordic", value: "default-nordic", themeId: 1 },
+					{ text: "Ocean Blue", value: "default-ocean-blue", themeId: 1 },
+					{ text: "Purple", value: "default-purple", themeId: 1 },
+					{ text: "Turquoise", value: "default-turquoise", themeId: 1 },
+					//bootstrap  themes
+					{ text: "Bootstrap Main", value: "bootstrap-main", themeId: 2 },
+					{ text: "Bootstrap Main Dark", value: "bootstrap-main-dark", themeId: 2 },
+					{ text: "Nordic", value: "bootstrap-nordic", themeId: 2 },
+					{ text: "Urban", value: "bootstrap-urban", themeId: 2 },
+					{ text: "Vintage", value: "bootstrap-vintage", themeId: 2 },
+					//material themes  
+					{ text: "Material Main", value: "material-main", themeId: 3  },           
+					{ text: "Arctic", value: "material-arctic", themeId: 3  },
+					{ text: "Material Lime Dark", value: "material-lime-dark", themeId: 3 },
+					{ text: "Material Main Dark", value: "material-main-dark", themeId: 3  },
+					{ text: "Nova", value: "material-nova", themeId: 3  },
+					//classic themes
+					{ text: "Classic Main", value: "classic-main", themeId: 4 },
+					{ text: "Classic Main Dark", value: "classic-main-dark", themeId: 4 },
+					{ text: "Opal", value: "classic-opal", themeId: 4 },
+					{ text: "Silver", value: "classic-silver", themeId: 4 },
+                ]
             });
 
             function changeFontSize(e) {
                 var value = $("#font-size").kendoDropDownList("value");
 
-                $("body").css("font-size", value + "px");
+                $("body, p, span").css("font-size", value + "px");				
+				$('#orders td, #scheduler, .k-scheduler-times-all-day, .k-event-template, #listview .hidden-xs').css("font-size", value + "px")				
+				$(".k-input-inner, .k-item, .k-column-title, k-panelbar-item-text, .k-icon, .k-link, .k-button-text").css("font-size", value + "px");
             }
 
             $("#font-size").kendoDropDownList({
@@ -337,9 +362,10 @@
                 change: changeFontSize
             });
 
+
             changeFontSize();
 
-            $("#theme-list, #dimensions-list, #font-size-list").addClass("ra-list");
+            $("#theme-list, #swatch-list, #font-size-list").addClass("ra-list");
 
             $("#configure").on("click", function(e) {
                 $("#configurator-wrap").toggleClass("hidden-xs");
@@ -888,12 +914,14 @@
 
             $("#example .form-widgets")
                 .find("select:not([multiple])").kendoDropDownList().end()
-                .find("select[multiple]").kendoMultiSelect().end()
-                .find("input:not([type])").addClass("k-textbox").end()
-                .find("input[type=date]").kendoDatePicker().end()
+                .find("select[multiple]").kendoMultiSelect().end()                
+                .find("input[type=text]").kendoTextBox().end()
+                .find("input[type=date]").kendoDatePicker().end()                
                 .find("input[type=number]").kendoNumericTextBox({
                     format: "0 years"
-                });
+            });
+
+            $(".app-button").kendoButton()
 
             $("#example textarea").kendoEditor({
                 tools: [

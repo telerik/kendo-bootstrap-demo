@@ -36,12 +36,12 @@ header h1,
 header button {
     display: inline-block;
     vertical-align: middle;
+    font-size: 21px;
 }
 
 header .container h1 {
     margin: 0;
     font-size: 21px;
-    line-height: 65px;
     padding-top: 20px;
     padding-left: 0;
 }
@@ -119,6 +119,16 @@ header .k-dropdown-wrap.k-state-default .k-input {
     color: #fff;
 }
 
+.header-description{
+    padding-top: 17px;
+    line-height: 33px;
+    padding-bottom: 6px;
+}
+
+.card{
+    margin-bottom: 20px;
+}
+
 .k-popup.ra-list {
     background-color: #010101;
     border-color: #5c5c5c;
@@ -166,15 +176,16 @@ header .k-dropdown-wrap.k-state-default .k-input {
     position: relative;
 }
 
-.ra-well-title {
-    font-size: 1.2857em;
-    line-height: 1.2857em;
-    border-bottom: 1px solid #e7e7e7;
-    margin: -5px -19px 0.8333em;
-    padding: 0 19px 0.7222em;
+#profile .card-body{
+    min-height: 158px;
 }
 
-.ra-avatar {
+.card-header {
+    font-size: 1.2857em;
+    line-height: 1.2857em;    
+}
+
+.avatar {
     border: 1px solid #e7e7e7;
     border-radius: 2px;
 }
@@ -212,7 +223,7 @@ header .k-dropdown-wrap.k-state-default .k-input {
 }
 
 .ra-well-overlay {
-    margin: -16px -20px -19px;
+    margin: -16px -17px -19px;
 }
 
 #tabstrip .k-content {
@@ -246,7 +257,7 @@ header .k-dropdown-wrap.k-state-default .k-input {
     vertical-align: middle;
 }
 
-#tabstrip .k-tabstrip-items .hidden-xs {
+#tabstrip .k-tabstrip-items .d-none {
     margin-left: 4px;
 }
 
@@ -265,7 +276,12 @@ header .k-dropdown-wrap.k-state-default .k-input {
 
 #listview {
     list-style-type: none;
-    padding: 0 0 15px;
+    padding: 0 0 15px;   
+}
+
+#listview .k-listview-content{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #listview figure {
@@ -279,7 +295,7 @@ figure h4 {
     font-size: 1.15em;
 }
 
-figure p.hidden-sm {
+figure p.d-sm-none {
     min-height: 80px;
 }
 
@@ -289,13 +305,15 @@ footer {
     padding: 2em 0;
 }
 
-header .container h1.visible-sm {
-    padding-top: 10px;
-    line-height: 33px;
-    padding-bottom: 10px;
+@media (max-width: 996px) and (min-width: 768px) {
+    .header-description{
+        padding-top: 0px;
+        padding-bottom: 0px;;
+    }
 }
 
-@media (max-width: 767px) {
+
+@media (max-width: 768px) {
     .k-menu.k-menu-horizontal .k-item {
         float: none;
     }
@@ -319,7 +337,7 @@ header .container h1.visible-sm {
         overflow: hidden;
         height: 260px;
         right: 0;
-        top: 50px;
+        top: 64px;
         z-index: 1000;
         padding: 0;
         width: 320px;
@@ -333,12 +351,17 @@ header .container h1.visible-sm {
     }
 }
 
+@media (max-width: 768px) {
+    .k-listview-content .img-fluid{
+        max-width: 80vw;
+    }
+}
+
 .k-black body,
-.k-metroblack body,
-.k-black .well,
-.k-metroblack .well,
-.k-black .ra-well-title,
-.k-metroblack .ra-well-title,
+.k-black .card,
+.k-metroblack .card,
+.k-black .card-header,
+.k-metroblack .card-header,
 .k-black .buttons-wrap,
 .k-metroblack .buttons-wrap
 {
@@ -347,25 +370,6 @@ header .container h1.visible-sm {
     color: #fff;
 }
 
-.k-highcontrast body,
-.k-highcontrast .well
-.k-highcontrast .ra-well-title,
-.k-highcontrast .buttons-wrap
-{
-    border-color: #664e62;
-    background-color: #2c232b;
-    color: #fff;
-}
-
-.k-moonlight body,
-.k-moonlight .well,
-.k-moonlight .ra-well-title,
-.k-moonlight .buttons-wrap
-{
-    border-color: #171e28;
-    background-color: #212a33;
-    color: #fff;
-}
 
 #configurator span.k-input{
     height: auto;
