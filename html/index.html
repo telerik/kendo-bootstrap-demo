@@ -6,7 +6,7 @@
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
    
-	    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/5.11.0/default/default-main.css" />
+	    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/5.11.0/bootstrap/bootstrap-main.css" />
 
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
         <script src="https://kendo.cdn.telerik.com/2023.1.117/js/kendo.all.min.js"></script>
@@ -18,11 +18,11 @@
         <header>
             <div class="container-sm">
                 <div class="row">
-                    <h1 class="col-md-3 header-description">Kendo UI &hearts; Bootstrap</h1>
+                    <h1 class="col-md-3 header-description">Kendo UI for jQuery &hearts; Bootstrap</h1>
     
-                    <button id="configure" class="d-none d-sm-block d-md-none"><span class="glyphicon glyphicon-align-justify"></span></button>
+                    <button id="configure" class="d-md-none"><span class="k-icon k-i-menu"></span></button>
     
-                    <div id="configurator-wrap" class="col-md-9">
+                    <div id="configurator-wrap" class="col-md-9 d-none d-md-block">
                         <div id="configurator" class="row">
                             <label class="col-md-4 col-sm-12 col-xs-12">
                                 <div class="description">Theme</div>
@@ -48,9 +48,9 @@
             <section class="card">
                 <div class="card-header">What is this page?</div>
                 <div class="card-body">
-                    <p>This page shows how to use Kendo UI alongside Twitter Bootstrap.</p>
+                    <p>This page shows how to use Kendo UI for jQuery alongside Twitter Bootstrap.</p>
 
-                    <p>The grid layout and responsive CSS is provided by Bootstrap, and widgets are provided by Kendo UI.</p>
+                    <p>The grid layout and responsive CSS is provided by Bootstrap, and components are provided by Kendo UI for jQuery.</p>
     
                     <p>Resize the page or customize it using the pickers above to see its responsive features.</p>
                 </div>                
@@ -62,7 +62,7 @@
                 <li><a href="#orders">Orders</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="https://demos.telerik.com/kendo-ui">Kendo UI demos</a></li>
+                <li><a href="https://demos.telerik.com/kendo-ui">Kendo UI for jQuery demos</a></li>
             </ul>
 
             <div class="row clearfix">
@@ -89,10 +89,10 @@
                 <div class="col-lg-8">
                     <div id="tabstrip" class="ra-section">
                         <ul>
-                            <li class="k-active"><span class="km-icon revenue"></span><span class="hidden-xs">Revenue</span></li>
-                            <li><span class="km-icon spd"></span><span class="hidden-xs">Sales / day</span></li>
-                            <li><span class="km-icon spr"></span><span class="hidden-xs">Sales / region</span></li>
-                        <li><span class="km-icon share"></span><span class="hidden-xs">Market share</span></li>
+                            <li class="k-active"><span class="km-icon revenue"></span><span class="d-none d-sm-block">Revenue</span></li>
+                            <li><span class="km-icon spd"></span><span class="d-none d-sm-block">Sales / day</span></li>
+                            <li><span class="km-icon spr"></span><span class="d-none d-sm-block">Sales / region</span></li>
+                            <li><span class="km-icon share"></span><span class="d-none d-sm-block">Market share</span></li>
                         </ul>
                         <div><div id="revenue"></div></div>
                         <div><div id="sales-per-day"></div></div>
@@ -122,7 +122,7 @@
                         <div class="row mb-3">
                             <label class="col-sm-12 col-md-4 form-label text-md-end" for="birthday">Birthday</label>
                             <div class="col-sm-12 col-md-8 col-lg-6">
-                                <input type="date" value="10/09/1979" />
+                                <input type="date" id="birthday" />
                             </div>
                         </div>
     
@@ -168,7 +168,7 @@
                                     <option>Node.js</option>
                                     <option>Ruby</option>
                                     <option>Ruby on Rails</option>
-                                    <option>Kendo UI</option>
+                                    <option>Kendo UI for jQuery</option>
                                 </select>
                             </div>
                         </div>
@@ -228,44 +228,39 @@
 
                 <div class="card-body">
                     <ul id="panelbar">
-                        <li class="k-state-active">
+                        <li class="k-active">
                             What is Kendo UI?
                             <div>
-                                <p>Kendo UI is a HTML5, jQuery-based framework for building modern HTML apps. Kendo UI combines the best of emerging HTML5, CSS3, and JavaScript technologies with robust, cross-browser techniques to deliver a framework that is both powerfully rich and broadly compatible with older browsers.</p>
-                                <p>Kendo UI combines everything that a developer needs to build a rich JavaScript app, eliminating the traditional challenge of manually researching and combining all of the needed plug-ins, frameworks, and libraries needed to build apps. Kendo UI includes rich UI controls for desktop, mobile and data vizualization, a JavaScript DataSource, fast Templates, cross-device Drag and Drop API, Globalization, Validation and MVVM framework extensions, and more.</p>
-                                <p><a href="https://www.telerik.com/download/kendo-ui-complete">Download Kendo UI</a> and experience the difference today</p>
+                                <p>Kendo UI for jQuery is a HTML5, jQuery-based framework for building modern HTML apps. Kendo UI for jQuery combines the best of HTML5, CSS3, and JavaScript technologies with robust, cross-browser techniques to deliver a framework that is both powerfully rich and broadly compatible with older browsers.</p>
+                                <p>Kendo UI for jQuery combines everything that a developer needs to build a rich JavaScript app, eliminating the traditional challenge of manually researching and combining all of the needed plug-ins, frameworks, and libraries needed to build apps. Kendo UI for jQuery includes rich UI controls for desktop, mobile and data vizualization, a JavaScript DataSource, fast Templates, cross-device Drag and Drop API, Globalization, Validation and MVVM framework extensions, and more.</p>
+                                <p><a href="https://www.telerik.com/download/kendo-ui-complete">Download Kendo UI for jQuery</a> and experience the difference today</p>
                             </div>
                         </li>
                         <li>
-                            Who should use Kendo UI?
+                            Who should use Kendo UI for jQuery?
                             <div>
-                                <p>Kendo UI is for all HTML developers. Kendo UI can be used with (or without) any server-side technology, making it the perfect front-end for every modern, browser-based HTML app. Kendo UI only requires jQuery. After that, everything that's needed is included.</p>
+                                <p>Kendo UI for jQuery is for all HTML developers. Kendo UI for jQuery can be used with (or without) any server-side technology, making it the perfect front-end for every modern, browser-based HTML app. Kendo UI for jQuery only requires jQuery. After that, everything that's needed is included.</p>
                             </div>
                         </li>
                         <li>
-                            What are Kendo UI widgets?
+                            What are Kendo UI for jQuery components?
                             <div>
-                                <p>Kendo UI widgets are part of the Kendo UI Framework. Kendo UI widgets are grouped into three collections:</p>
-                                <ul>
-                                    <li>Kendo UI Web for touch-enabled desktop development</li>
-                                    <li>Kendo UI DataViz for desktop and mobile data vizualizations</li>
-                                    <li>Kendo UI Mobile for mobile app development, including PhoneGap deployment</li>
-                                </ul>
-                                <p>All widgets complement the tooling you need for modern HTML5 and JavaScript development.<br /> <br /> The Kendo UI Framework provides more than UI, and in the future Kendo UI will offer additional tools to modern HTML developers.</p>
+                                <p>Kendo UI for jQuery components are part of the Kendo UI for jQuery Framework. 
+                                <p>All components complement the tooling you need for modern HTML5 and JavaScript development.<br /> <br /> The Kendo UI for jQuery Framework provides more than UI, and in the future Kendo UI for jQuery will offer additional tools to modern HTML developers.</p>
                             </div>
                         </li>
                         <li>
-                            How do you use Kendo UI?
+                            How do you use Kendo UI for jQuery?
                             <div>
-                                <p>Kendo UI is a pure JavaScript framework, so using Kendo UI is as simple as referencing JavaScript and CSS resources on your page. Once Kendo UI is configured on your page, the rich API gives you everything you need to initialize and configure an application.</p>
-                                <p>To learn more about using and installing Kendo UI, visit the Kendo UI&nbsp;<a href="https://demos.telerik.com/kendo-ui">online demos</a>.</p>
+                                <p>Kendo UI for jQuery is a pure JavaScript framework, so using Kendo UI for jQuery is as simple as referencing JavaScript and CSS resources on your page. Once Kendo UI for jQuery is configured on your page, the rich API gives you everything you need to initialize and configure an application.</p>
+                                <p>To learn more about using and installing Kendo UI for jQuery, visit the Kendo UI for jQuery&nbsp;<a href="https://demos.telerik.com/kendo-ui">online demos</a>.</p>
                             </div>
                         </li>
                     </ul>
                 </div>                
             </section>
 
-            <footer>Copyright &copy; <script>document.write(new Date().getFullYear());</script> <a href="https://www.telerik.com/">Telerik Inc</a>. All rights reserved.</footer>
+            <footer>Copyright &copy; <script>document.write(new Date().getFullYear());</script> <a href="https://www.telerik.com/">Progress Software Corporation and/or its subsidiaries or affiliates</a>. All rights reserved.</footer>
         </div>
 
         <script>
@@ -278,6 +273,7 @@
             $("#theme").kendoDropDownList({
                 dataTextField: "themeName",
 				dataValueField: "themeId",
+                value: 2,
 				dataSource: [
 				  { themeName: "Default", themeId: 1 },
 				  { themeName: "Bootstrap", themeId: 2 },
@@ -290,6 +286,7 @@
                 cascadeFrom: "theme",			
 				dataTextField: "text",
 				dataValueField: "value",
+                value: "bootstrap-main",
 				change: function (e) {				
 				  
 				    var themeName = $("#theme").data('kendoDropDownList').text().toLowerCase();
@@ -339,18 +336,17 @@
             });
 
             function changeFontSize(e) {
-                var value = $("#font-size").kendoDropDownList("value");
+                var value = $("#font-size").data('kendoDropDownList').value();
 
-                $("body, p, span").css("font-size", value + "px");				
-				$('#orders td, #scheduler, .k-scheduler-times-all-day, .k-event-template, #listview .hidden-xs').css("font-size", value + "px")				
+                $("body, p, span, h4").css("font-size", value + "px");				
+				$('#orders td, #scheduler, .k-scheduler-times-all-day, .k-event-template, .card-header').css("font-size", value + "px")				
 				$(".k-input-inner, .k-item, .k-column-title, k-panelbar-item-text, .k-icon, .k-link, .k-button-text").css("font-size", value + "px");
             }
 
             $("#font-size").kendoDropDownList({
                 dataTextField: "text",
                 dataValueField: "value",
-                value: 14,
-                height: 204,
+                value: 14,				
                 dataSource: [
                     { text: "10px", value: 10 },
                     { text: "12px", value: 12 },
@@ -362,20 +358,19 @@
                 change: changeFontSize
             });
 
-
-            changeFontSize();
-
             $("#theme-list, #swatch-list, #font-size-list").addClass("ra-list");
 
             $("#configure").on("click", function(e) {
-                $("#configurator-wrap").toggleClass("hidden-xs");
+                $("#configurator-wrap").toggleClass("d-none");
                 e.preventDefault();
             });
 
-            // init sample widgets
+            // init sample components
             var serviceBaseUrl = "https://demos.telerik.com/kendo-ui/service";
 
-            $("#menu").kendoMenu();
+            $("#menu").kendoMenu({
+                orientation: "horizontal"
+            });
 
             function resizeTabStripContent() {
                 kendo.resize("#tabstrip");
@@ -385,10 +380,7 @@
                 animation: {
                     open: { effects: "fadeIn" }
                 }
-            });
-
-            // resize nested charts when window resizes
-            $(window).resize(resizeTabStripContent);
+            });            
 
             function initCharts(theme) {
                 $(".k-tabstrip .k-content .k-chart").empty().each(function() {
@@ -813,7 +805,7 @@
                 dataSource: {
                     type: "odata",
                     transport: {
-                        read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Orders"
+                        read: serviceBaseUrl + "/Northwind.svc/Orders"
                     },
                     serverPaging: true,
                     serverSorting: true,
@@ -832,9 +824,9 @@
             });
 
             $("#schedule").kendoScheduler({
-                date: new Date("2013/6/13"),
-                startTime: new Date("2013/6/13 07:00 AM"),
-                endTime: new Date("2013/6/13 08:00 PM"),
+                date: new Date("2022/6/13"),
+                startTime: new Date("2022/6/13 07:00 AM"),
+                endTime: new Date("2022/6/13 08:00 PM"),
                 views: [
                     { type: "day", selected: true },
                     "week",
@@ -915,8 +907,7 @@
             $("#example .form-widgets")
                 .find("select:not([multiple])").kendoDropDownList().end()
                 .find("select[multiple]").kendoMultiSelect().end()                
-                .find("input[type=text]").kendoTextBox().end()
-                .find("input[type=date]").kendoDatePicker().end()                
+                .find("input[type=text]").kendoTextBox().end()                            
                 .find("input[type=number]").kendoNumericTextBox({
                     format: "0 years"
             });
@@ -932,6 +923,36 @@
                     "insertUnorderedList", "insertOrderedList", "indent", "outdent"
                 ]
             });
+
+			$("#birthday").kendoDatePicker({
+				value: '10/09/1979'
+			})    
+
+			$(window).on("resize", function () {
+				// change menu orientation when window resizes
+                setMenuOrientation();
+				// resize nested charts when window resizes
+				resizeTabStripContent();
+            });
+
+			function setMenuOrientation() {
+                var windowWidth = $(window).width();
+                var menu = $("#menu").data("kendoMenu");
+                var orientation = menu.options.orientation;
+
+
+                if (windowWidth <= 760) {
+                    orientation = "vertical"
+                } else {
+                    orientation = "horizontal"
+                }
+
+                menu.setOptions({
+                    orientation: orientation
+                })
+            }
+
+			changeFontSize();
         </script>
     </body>
 </html>

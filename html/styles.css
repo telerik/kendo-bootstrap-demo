@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Kendo UI";
-    src: url("http://cdn.kendostatic.com/2013.3.1030/styles/images/kendoui.woff") format("woff"),
-         url("http://cdn.kendostatic.com/2013.3.1030/styles/images/kendoui.ttf") format("truetype");
+    src: url("https://kendo.cdn.telerik.com/2023.1.117/styles/images/kendoui.woff") format("woff"),
+         url("https://kendo.cdn.telerik.com/2023.1.117/styles/images/kendoui.ttf") format("truetype");
 }
 
 body:before
@@ -36,12 +36,12 @@ header h1,
 header button {
     display: inline-block;
     vertical-align: middle;
-    font-size: 21px;
+    font-size: 20px;
 }
 
 header .container h1 {
     margin: 0;
-    font-size: 21px;
+    font-size: 20px;
     padding-top: 20px;
     padding-left: 0;
 }
@@ -77,55 +77,50 @@ header .k-dropdown {
     width: 100%;
 }
 
-header .k-dropdown-wrap {
+header .k-dropdown {
     background-image: none !important;
 }
 
-header .k-dropdown,
-header .k-dropdown-wrap.k-state-default {
+header .k-dropdown{
     background-color: transparent;
     border-color: #5c5c5c;
     border-radius: 0;
 }
 
-header .k-dropdown-wrap.k-state-hover,
-header .k-dropdown-wrap.k-state-active,
-header .k-dropdown-wrap.k-state-focused {
-    background-color: #030303;
-}
-
-header .k-dropdown-wrap.k-state-focused {
+header .k-dropdown.k-focused {
     box-shadow: none;
 }
 
 header .k-dropdown .k-input {
     padding-top: 0;
     padding-bottom: 0;
-    height: auto;
     text-indent: 14px;
 }
 
 header .k-dropdown .k-input,
-header .k-dropdown-wrap .k-select {
+header .k-dropdown .k-select {
     line-height: 45px;
 }
 
-header .k-dropdown .k-i-arrow-s {
-    background-image: url("http://cdn.kendostatic.com/2013.2.918/styles/Bootstrap/sprite.png");
-    background-position: -16px -32px;
-}
+    header .k-dropdown .k-i-arrow-s {
+        background-image: url("http://cdn.kendostatic.com/2023.1.117/styles/Bootstrap/sprite.png");
+        background-position: -16px -32px;
+    }
 
-header .k-dropdown-wrap.k-state-default .k-input {
+header .k-dropdown.k-default .k-input {
     color: #fff;
 }
 
-.header-description{
-    padding-top: 17px;
+.header-description{    
     line-height: 33px;
-    padding-bottom: 6px;
+    align-self: center;
 }
 
-.card{
+#configurator label {
+    padding-bottom: 12px !important;
+}
+
+.card {
     margin-bottom: 20px;
 }
 
@@ -137,31 +132,34 @@ header .k-dropdown-wrap.k-state-default .k-input {
     border-radius: 0;
 }
 
-.k-popup.ra-list .k-state-hover,
-.k-popup.ra-list .k-state-selected,
-.k-popup.ra-list .k-state-focused {
-    background-image: none;
-    background-color: #555;
-    box-shadow: none;
-    color: #fff;
-    border-color: #555;
+.k-popup{
+    height: auto !important;
 }
 
-.k-popup.ra-list .k-item {
+.ra-list .k-list-item {
     border-radius: 0;
     text-indent: 7px;
 }
 
+.ra-list .k-list-item-text {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+}
+
 #configure {
     z-index: 10;
-    width: 50px;
-    height: 50px;
+    width: 62px;
+    height: 62px;
     overflow: hidden;
     border-width: 0 0 0 1px;
     background-color: transparent;
     position: absolute;
     top: 0; right: 0;
     color: #fff;
+}
+
+#configure .k-i-menu{
+    font-size: 18px !important;
 }
 
 #demo {
@@ -279,16 +277,21 @@ header .k-dropdown-wrap.k-state-default .k-input {
     padding: 0 0 15px;   
 }
 
-#listview .k-listview-content{
+#listview .k-listview-content {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 40px;
+    padding-top: 15px
+}
+
+.k-listview-item{
+    margin-right: 40px;
 }
 
 #listview figure {
     border: 1px solid #e7e7e7;
     border-radius: 3px;
     padding: 5px;
-    margin-top: 15px;
 }
 
 figure h4 {
@@ -305,13 +308,19 @@ footer {
     padding: 2em 0;
 }
 
-@media (max-width: 996px) and (min-width: 768px) {
-    .header-description{
-        padding-top: 0px;
-        padding-bottom: 0px;;
+@media (max-width: 1360px) {
+    .k-listview-content {
+        justify-content: space-evenly;
     }
 }
 
+@media (max-width: 996px) and (min-width: 768px) {
+    .header-description {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-size: 16px;
+    }
+}
 
 @media (max-width: 768px) {
     .k-menu.k-menu-horizontal .k-item {
@@ -349,28 +358,29 @@ footer {
         width: 100%;
         margin: 0;
     }
+
+    .header-description{
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 768px) {
     .k-listview-content .img-fluid{
         max-width: 80vw;
     }
+
+    .header-description {
+        min-height: 56px;
+        padding-top: 12px;
+    }
 }
 
 .k-black body,
 .k-black .card,
-.k-metroblack .card,
 .k-black .card-header,
-.k-metroblack .card-header,
-.k-black .buttons-wrap,
-.k-metroblack .buttons-wrap
+.k-black .buttons-wrap
 {
     border-color: #444;
     background-color: #1e1e1e;
     color: #fff;
-}
-
-
-#configurator span.k-input{
-    height: auto;
 }
